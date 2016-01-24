@@ -30,3 +30,6 @@
 
 # Debug files
 *.dSYM/
+Coursera.Princeton.Algorithms/Coursera.Princeton.Algorithms.Tests/bin/
+Coursera.Princeton.Algorithms/Coursera.Princeton.Algorithms/obj/
+Coursera.Princeton.Algorithms/Coursera.Princeton.Algorithms.Tests/obj/
