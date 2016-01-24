@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Part1\Week1\IUnionFind.cs" />
     <Compile Include="Part1\Week1\QuickFind.cs" />
+    <Compile Include="Part1\Week1\QuickUnion.cs" />
     <Compile Include="Part1\Week1\UnionFindQuestions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

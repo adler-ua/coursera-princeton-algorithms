@@ -5,12 +5,12 @@ using Coursera.Princeton.Algorithms.Part1.Week1;
 namespace Coursera.Princeton.Algorithms.Tests
 {
     [TestClass]
-    public class UnionFindTests
+    public class QuickFindTests
     {
         [TestMethod]
         public void InitWorks()
         {
-            QuickFind uf = new QuickFind(10);
+            IUnionFind uf = new QuickFind(10);
             int[] ids = uf.GetIds();
             for(int i=0;i<10;i++)
             {
