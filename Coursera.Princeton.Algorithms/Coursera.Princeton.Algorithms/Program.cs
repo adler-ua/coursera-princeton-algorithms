@@ -12,7 +12,8 @@ namespace Coursera.Princeton.Algorithms
         [STAThread]
         static void Main(string[] args)
         {
-            string res = Part1.Week1.UnionFindQuestions.Question1Seed341498();
+            //string res = Part1.Week1.UnionFindQuestions.Question1Seed341498();
+            string res = Part1.Week1.UnionFindQuestions.Question2Seed532465();
             Console.WriteLine(res);
             Clipboard.SetText(res);
             Console.ReadLine();

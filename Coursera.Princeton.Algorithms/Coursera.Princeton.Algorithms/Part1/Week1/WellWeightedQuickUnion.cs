@@ -8,9 +8,8 @@ namespace Coursera.Princeton.Algorithms.Part1.Week1
 {
     public class WellWeightedQuickUnion : IUnionFind
     {
-        private int _size;
-        private int[] _root;
-        private int[] _rootsize;
+        private int[] _ids;
+        private int[] _size;
 
         public WellWeightedQuickUnion(int size)
         {
@@ -19,13 +18,12 @@ namespace Coursera.Princeton.Algorithms.Part1.Week1
 
         private void Init(int size)
         {
-            _size = size;
-            _root = new int[_size];
-            _rootsize = new int[_size];
-            for(int i=0;i< _size;i++)
+            _ids = new int[size];
+            _size = new int[size];
+            for(int i=0;i< size;i++)
             {
-                _root[i] = i;
-                _rootsize[i] = 1;
+                _ids[i] = i;
+                _size[i] = 1;
             }
         }
 
@@ -36,28 +34,28 @@ namespace Coursera.Princeton.Algorithms.Part1.Week1
 
         public int[] GetIds()
         {
-            return _root;
+            return _ids;
         }
 
         public void Union(int p, int q)
         {
             int pRoot = Root(p);
             int qRoot = Root(q);
-            if (_rootsize[qRoot] > _rootsize[pRoot])
+            if (_size[qRoot] > _size[pRoot])
             {
-                _root[pRoot] = _root[qRoot];
-                _rootsize[qRoot] += _rootsize[pRoot];
+                _ids[pRoot] = _ids[qRoot];
+                _size[qRoot] += _size[pRoot];
             }
             else
             {
-                _root[qRoot] = _root[pRoot];
-                _rootsize[pRoot] += _rootsize[qRoot];
+                _ids[qRoot] = _ids[pRoot];
+                _size[pRoot] += _size[qRoot];
             }
         }
 
         private int Root(int p)
         {
-            while (p != _root[p]) p = _root[p];
+            while (p != _ids[p]) p = _ids[p];
             return p;
         }
     }

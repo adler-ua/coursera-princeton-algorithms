@@ -9,7 +9,7 @@ namespace Coursera.Princeton.Algorithms.Part1.Week1
     public class QuickUnion : IUnionFind
     {
         private int _size;
-        private int[] _root;
+        private int[] _ids;
 
         public QuickUnion(int size)
         {
@@ -19,10 +19,10 @@ namespace Coursera.Princeton.Algorithms.Part1.Week1
         private void Init(int size)
         {
             this._size = size;
-            _root = new int[_size];
+            _ids = new int[_size];
             for(int i=0;i<_size;i++)
             {
-                _root[i] = i;
+                _ids[i] = i;
             }
         }
 
@@ -33,19 +33,19 @@ namespace Coursera.Princeton.Algorithms.Part1.Week1
 
         public int[] GetIds()
         {
-            return _root;
+            return _ids;
         }
 
         public void Union(int p, int q)
         {
             int pRoot = Root(p);
             int qRoot = Root(q);
-            _root[pRoot] = _root[qRoot];
+            _ids[pRoot] = _ids[qRoot];
         }
 
         private int Root(int p)
         {
-            while (p != _root[p]) p = _root[p];
+            while (p != _ids[p]) p = _ids[p];
             return p;
         }
     }
